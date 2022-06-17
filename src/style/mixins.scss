@@ -1,0 +1,22 @@
+@mixin defaultCard {
+    width: 320px;
+    height: 480px;
+    background: url('../../../src/resources/img/cardBG.png') center center / cover no-repeat;
+    padding-left: 48px;
+    padding-top: 21px;
+    position: relative;
+    border-radius: 15px;
+    cursor: pointer;
+    &::after {
+        content: "";
+        position: absolute;
+        top: -4px;
+        left: -4px;
+        width: 328px;
+        height: 488px;
+        border-radius: 15px;
+        background-color: $blue;
+        z-index: -1;
+        clip-path: polygon(14% 0, 80% 0%, 100% 0, 100% 100%, 80% 100%, 20% 100%, 0 100%, 0 9%);
+    }
+}

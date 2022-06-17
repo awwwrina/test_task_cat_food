@@ -1,0 +1,134 @@
+@import '../../style/variables.scss';
+@import '../../style/mixins.scss';
+
+.card {
+    z-index: 1;
+    &__item {
+       @include defaultCard;
+        &:hover {
+            &::after {
+                background-color: $lightBlue;
+            }
+            .card__weight {        
+                background-color: $lightBlue;
+            }
+            .card__descr span {
+                color: $lightBlue;
+            }
+        }
+        &_active {
+            @include defaultCard;
+            &::after {
+                background-color: $pink;
+            } 
+            .card__weight {        
+                background-color: $pink;
+            }
+            &:hover {
+                &::after {
+                    background-color: $lightPink;
+                } 
+                .card__weight {        
+                    background-color: $lightPink;
+                } 
+            }
+        }
+        &_disabled {
+            @include defaultCard;
+            position: relative;
+            cursor:auto;
+            &::after {
+                background-color: $grey;
+            } 
+            &:before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                z-index: 10;
+                clip-path: polygon(2% 8%, 13% 0%, 89% 0%, 95% 0%, 98% 1%, 100% 4%, 100% 7%, 100% 95%, 99% 98%, 96% 100%, 90% 100%, 9% 100%, 5% 100%, 1% 99%, 0% 97%, 0% 10%, 0% 9%);
+                background: $semi-transparentOverlay;                
+            }
+            .card__title, .card__taste {
+                color: $grey;
+            }
+            .card__weight {        
+                background-color: $grey;
+            }
+            &:hover {
+                &::after {
+                    background-color: $grey;
+                } 
+                .card__weight {        
+                    background-color: $grey;
+                } 
+            }
+        }
+    }
+    &__subtitle {
+        font-size: 16px;
+        color: $grey;
+        &_active {
+            color: $lightPink;
+        }
+    }
+    &__title {
+        margin-top: 5px;
+        font-size: 48px;
+        font-weight: 700;
+    }
+    &__taste{
+        font-weight: 700;
+        font-size: 24px
+    }
+    &__servings, &__gift, &__satisfied {
+        font-size: 14px;
+        color: $grey;
+    }
+    &__servings {
+        margin-top: 15px;
+        span {
+            font-weight: 700;
+        }
+    }
+    &__weight {
+        position: absolute;
+        background-color: $blue;
+        color: $white;
+        height: 80px;
+        width: 80px;
+        border-radius: 100%;
+        bottom: 16px;
+        right: 16px;
+        display: flex;
+        align-content: center;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+        .amount {
+            font-size: 42px;
+            text-align: center;
+            line-height: 30px;
+        }
+        .kg {
+            font-size: 22px;
+            text-align: center;
+        }
+    }
+    &__descr {
+        margin-top: 24px;
+        font-size: 13px;
+        text-align: center;
+        color: $white;
+        span {
+            color: $blue;
+            text-decoration: underline dashed;
+            cursor: pointer;
+            &:hover {
+                color: $lightBlue;
+            }
+        }
+    }
+}

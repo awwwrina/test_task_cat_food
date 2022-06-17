@@ -1,0 +1,25 @@
+@import '../../../style/variables.scss';
+.main {
+    background: url('../../../resources/img/mainBG.jpg') center center / cover no-repeat;
+    padding-top: 36px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+
+}
+.title {
+    font-family: 'Exo 2.0';
+    font-size: 36px;
+    text-align: center;
+    color: $white;
+    font-weight: 100;
+}
+.feeds {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    column-gap: 80px;
+    margin-top: 25px;
+}
