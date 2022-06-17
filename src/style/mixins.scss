@@ -1,6 +1,6 @@
 @mixin defaultCard {
-    width: 320px;
-    height: 480px;
+    width: 312px;
+    height: 472px;
     background: url('../../../src/resources/img/cardBG.png') center center / cover no-repeat;
     padding-left: 48px;
     padding-top: 21px;
@@ -12,8 +12,8 @@
         position: absolute;
         top: -4px;
         left: -4px;
-        width: 328px;
-        height: 488px;
+        width: 320px;
+        height: 480px;
         border-radius: 15px;
         background-color: $blue;
         z-index: -1;
