@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import './card.scss';
-import '../../style/variables.scss';
 
 const Card = ({taste, servings, mouses, isSatisfied, weight, descr, ended}) => {
 
@@ -8,7 +7,6 @@ const Card = ({taste, servings, mouses, isSatisfied, weight, descr, ended}) => {
     const [mouseEnter, setMouseEnter] = useState(false);
     const classesCardItem = (active && !ended) ? 'card__item_active' : 'card__item';
     const classesCarSubtitle = (mouseEnter && active) ? 'card__subtitle_active' : 'card__subtitle';
-    
     let disabled = 'card__item';
     if (ended) {
         disabled += '_disabled';
@@ -33,7 +31,7 @@ const Card = ({taste, servings, mouses, isSatisfied, weight, descr, ended}) => {
     const renderSatisfied = (isSatisfied) => {
         return isSatisfied ? <p className="card__satisfied">заказчик доволен</p> : null;
     }
-
+    
     let descrStyle = null;
     if (ended) {
         descrStyle = {'color': '#FFFF66'}
